@@ -27,9 +27,17 @@ class zonaDetector{
     });
 
   }
-  activar(){
+  activar(x = this.x, y = this.y, ax = this.ax, ay = this.ay){
     let contador = 0;
     let bordeColor = [190,30,90]
+    this.v.activeZones[this.index].normX = map(x, 0, width, 0.0, 1.0);
+    this.x = x;
+    this.v.activeZones[this.index].normY = map(y, 0, height, 0.0, 1.0);
+    this.y = y;
+    this.v.activeZones[this.index].normW = map(ax, 0, width, 0.0, 1.0);
+    this.ax = ax;
+    this.v.activeZones[this.index].normH = map(ay, 0, height, 0.0, 1.0);
+    this.ay = ay;
     if(this.v.activeZones[this.index].isMovementDetectedFlag){
       bordeColor = [118,255,3]
     }
